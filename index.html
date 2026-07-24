@@ -3,57 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convites Digitais Interativos | Seu Nome</title>
+  <title>JottaVe | Convites Digitais Interativos</title>
+  <!-- Fonte moderna do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho / Banner -->
+  <!-- Navegação Fixa Profissional -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">JottaVe<span>.convites</span></a>
+      <ul class="nav-links">
+        <li><a href="#modelos">Modelos</a></li>
+        <li><a href="#vantagens">Vantagens</a></li>
+      
+        <a href="#" class="btn-nav btn-abrir-modal">Pedir Orçamento</a>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner Hero Profissional -->
   <header class="hero">
-    <h1>Convites Digitais Interativos</h1>
-    <p>Encante seus convidados com confirmação de presença, localização e estilo único.</p>
-    <a href="https://wa.me/SEUNUMERO" class="btn-primary" target="_blank">Fazer Orçamento no WhatsApp</a>
+    <div class="hero-content">
+      <span class="badge">Especialista em Convites Interativos</span>
+      <h1>Surpreenda seus convidados desde o <span>primeiro clique</span>.</h1>
+      <p>Convites digitais modernos com confirmação de presença (RSVP), localização no mapa, lista de presentes e efeitos visuais incríveis.</p>
+      <!-- Substitua o botão verde principal por este: -->
+<div class="hero-btns">
+  <a href="#" class="btn-primary btn-abrir-modal">Solicitar Orçamento no WhatsApp</a>
+  <a href="#modelos" class="btn-secondary-outline">Ver Catálogo</a>
+</div>
+    </div>
   </header>
 
-  <!-- Seção do Catálogo -->
-  <section class="portfolio">
+  <!-- Seção de Portfólio / Modelos -->
+  <section class="portfolio" id="modelos">
     <h2>Modelos em Destaque</h2>
-    <p class="subtitle">Passe o mouse ou toque para interagir com o convite</p>
+    <p class="subtitle">Interaja com os mockups abaixo e veja a experiência do seu convidado</p>
     
     <div class="grid-convites">
       
-      <!-- Card Modelo 1: Casamento -->
+      <!-- Card 1: Casamento -->
       <div class="card">
         <div class="phone-mockup">
           <div class="screen">
-            <img src="assets/convite-casamento.png" alt="Convite de Casamento Interativo">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Convite de Casamento Interativo">
           </div>
         </div>
-        <h3>Casamento Elegante</h3>
-        <p>Com botões clicáveis para lista de presentes e localização no mapa.</p>
-        <a href="LINK_DO_SEU_DEMO" class="btn-secondary" target="_blank">Testar Convite</a>
+        <div class="card-info">
+          <h3>Casamento Elegante</h3>
+          <p>Confirmação no WhatsApp, localização exata no Google Maps e lista de presentes interativa.</p>
+          <a href="#" class="btn-card">Testar Demonstrativo</a>
+        </div>
       </div>
 
-      <!-- Card Modelo 2: Aniversário Infantil -->
+      <!-- Card 2: Aniversário / Festas -->
       <div class="card">
         <div class="phone-mockup">
           <div class="screen">
-            <img src="assets/convite-infantil.png" alt="Convite Infantil Interativo">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Convite Infantil Interativo">
           </div>
         </div>
-        <h3>Aniversário Infantil</h3>
-        <p>Design divertido com efeito de animação e confirmação via WhatsApp.</p>
-        <a href="LINK_DO_SEU_DEMO" class="btn-secondary" target="_blank">Testar Convite</a>
+        <div class="card-info">
+          <h3>Aniversário Infantil</h3>
+          <p>Design alegre e vibrante com animações, contagem regressiva e confirmação rápida.</p>
+          <a href="#" class="btn-card">Testar Demonstrativo</a>
+        </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Seção de Vantagens -->
+  <section class="features" id="vantagens">
+    <h2>Por que escolher convites digitais?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="icon">⚡</div>
+        <h3>Envio Instantâneo</h3>
+        <p>Envie para todos os convidados via WhatsApp ou redes sociais sem limites de entregas.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📍</div>
+        <h3>Botões Clicáveis</h3>
+        <p>Acesso em 1 clique ao Waze/Google Maps do local, lista de presentes e confirmação.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">🌿</div>
+        <h3>Ecológico e Econômico</h3>
+        <p>Economize no frete e na impressão gráfica enquanto preserva o meio ambiente.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Rodapé -->
   <footer>
-    <p>&copy; 2026 Seus Convites Digitais - Todos os direitos reservados.</p>
+    <p>&copy; 2026 <strong>JottaVe Convites Digitais</strong>. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
+  <!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/5527992497940" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.675-.691 1.646 0 .97.705 1.908.803 2.04.099.133 1.388 2.12 3.363 2.973.47.203.837.324 1.123.415.472.15.902.129 1.24.078.378-.057 1.17-.478 1.336-.94.166-.462.166-.857.117-.94-.049-.083-.181-.133-.379-.232z"/>
+  </svg>
+</a>
+
+<!-- Modal de Orçamento (Pop-up) -->
+  <div id="modalOrcamento" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="fecharModal">&times;</button>
+      
+      <span class="badge" style="margin-bottom: 10px; display: inline-block;">Orçamento Sob Medida</span>
+      <h2>Consulte Valores e Prazos</h2>
+      <p class="subtitle">Preencha os detalhes do seu evento abaixo e receba uma proposta exclusiva direto no seu WhatsApp!</p>
+
+      <form id="quoteForm" class="quote-form">
+        <div class="form-group">
+          <label for="nome">Seu Nome:</label>
+          <input type="text" id="nome" placeholder="Ex: João Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tipoEvento">Tipo do Evento:</label>
+          <select id="tipoEvento" required>
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="Casamento">Casamento</option>
+            <option value="Aniversário Infantil">Aniversário Infantil</option>
+            <option value="15 Anos / Debutante">15 Anos / Debutante</option>
+            <option value="Chá de Bebê / Revelação">Chá de Bebê / Revelação</option>
+            <option value="Evento Corporativo / Outro">Outro Tipo de Evento</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="formato">Formato Desejado:</label>
+          <select id="formato" required>
+            <option value="Convite Interativo em PDF">Convite Interativo em PDF (Links Clicáveis)</option>
+            <option value="Site Completo do Evento">Site do Evento (Página Web + RSVP)</option>
+            <option value="Ainda não sei, quero ajuda">Ainda não sei, quero ajuda para escolher</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dataEvento">Data Estimada do Evento:</label>
+          <input type="date" id="dataEvento">
+        </div>
+
+        <div class="form-group">
+          <label for="observacoes">Detalhes ou Tema do Evento:</label>
+          <textarea id="observacoes" rows="3" placeholder="Ex: Tema Homem-Aranha, cores azul e dourado, precisa de confirmação de presença..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-quote-submit">Enviar Pedido pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
+</body>
