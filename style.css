@@ -471,3 +471,219 @@ footer {
   background-color: #e2e8f0;
   color: #0f172a;
 }
+/* --- Melhorias nos Cards do Catálogo --- */
+
+.grid-convites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+/* Animação do celular no hover */
+.phone-mockup {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .phone-mockup {
+  transform: scale(1.03);
+}
+
+/* Categoria / Badge do Card */
+.card-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.card-info {
+  width: 100%;
+  text-align: left;
+}
+
+.card-info h3 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Lista de Recursos */
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-features li {
+  font-size: 0.9rem;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-features .check {
+  color: #16a34a;
+  font-weight: 800;
+  background: #dcfce7;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* Botões de Ação */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-demo {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-demo:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.btn-card-quote {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-card-quote:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+/* ==========================================
+   AJUSTES PARA CELULAR (RESPONSIVIDADE)
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* 1. Ajuste do Cabeçalho / Navbar */
+  .nav-container {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  /* Esconde o botão do menu superior no celular para economizar espaço */
+  .btn-nav {
+    display: none;
+  }
+
+  /* 2. Ajuste do Banner Principal (Hero) */
+  .hero {
+    padding: 100px 15px 50px 15px;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem; /* Reduz tamanho do título no celular */
+    margin: 15px 0;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-btns {
+    flex-direction: column; /* Empilha os botões */
+    width: 100%;
+  }
+
+  .btn-primary, 
+  .btn-secondary-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 3. Ajuste do Botão Flutuante do WhatsApp */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    z-index: 999;
+  }
+
+  /* 4. Ajuste dos Cards e Modal no Celular */
+  .modal-content {
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .grid-convites {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
