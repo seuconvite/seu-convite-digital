@@ -564,11 +564,13 @@ footer {
   font-size: 0.75rem;
 }
 
-/* Botões de Ação */
+/* --- Botões e Ações dos Cards --- */
 .card-actions {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .btn-demo {
@@ -686,4 +688,85 @@ footer {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+}
+/* Estilização da Seção de Convites */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-full {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 12px 15px !important;
+  border-radius: 12px !important;
+  font-size: 0.95rem !important;
+  box-sizing: border-box;
+}
+
+.card-features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 15px 0 !important;
+  text-align: left;
+}
+
+.card-features li {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-features .check {
+  color: #16a34a;
+  font-weight: bold;
+}
+/* Botão Verde de Testar Demonstrativo */
+.btn-card-demo {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #25d366;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.2s;
+  box-sizing: border-box;
+}
+
+.btn-card-demo:hover {
+  background-color: #20bd5a;
+  transform: translateY(-2px);
+}
+
+/* Botão Escuro de Pedir Este Modelo */
+.btn-card-quote {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  box-sizing: border-box;
+}
+
+.btn-card-quote:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
 }
