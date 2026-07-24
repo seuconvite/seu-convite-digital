@@ -87,3 +87,90 @@ body {
   border-radius: 8px;
   object-fit: cover;
 }
+/* Subtítulo */
+.subtitle {
+  color: #666;
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+/* Seção de Portfólio */
+.portfolio {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.grid-convites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Mockup de Smartphone */
+.phone-mockup {
+  position: relative;
+  width: 220px;
+  height: 440px;
+  margin: 0 auto 20px auto;
+  background: #111;
+  border-radius: 36px;
+  padding: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), inset 0 0 0 2px #333;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Câmera/Notch do Celular */
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+/* Tela do Celular com Efeito de Scroll */
+.screen {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Efeito ao passar o mouse: a imagem rola levemente como se o usuário estivesse rolando a página */
+.card:hover .screen img {
+  transform: scale(1.08);
+}
+
+.card:hover .phone-mockup {
+  box-shadow: 0 20px 45px rgba(76, 161, 175, 0.3), inset 0 0 0 2px #4ca1af;
+}
