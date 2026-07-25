@@ -39,7 +39,7 @@
       overflow-x: hidden;
     }
 
-    /* Barra Superior Flutuante com Entrada Suave */
+    /* Barra Superior Flutuante */
     .demo-bar {
       background: #1e293b;
       color: #ffffff;
@@ -54,7 +54,7 @@
       animation: fadeInDown 0.8s ease-out;
     }
 
-    /* Hero Banner com Zoom e Fade In */
+    /* Hero Banner */
     .hero {
       position: relative;
       height: 75vh;
@@ -99,7 +99,7 @@
       animation: fadeInUp 1s ease-out 0.6s backwards;
     }
 
-    /* Card Principal com Animação de Subida */
+    /* Card Principal */
     .main-card {
       max-width: 650px;
       margin: -50px auto 0 auto;
@@ -162,7 +162,7 @@
       letter-spacing: 1px;
     }
 
-    /* Divisor com Rotação em Hover */
+    /* Divisor */
     .divider {
       display: flex;
       align-items: center;
@@ -195,19 +195,12 @@
       margin-bottom: 25px;
     }
 
-    .info-block h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
     .info-block p {
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* Elementos para Revelação ao Rolar a Tela */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -219,7 +212,7 @@
       transform: translateY(0);
     }
 
-    /* Botões Interativos com Animações Vibrantes */
+    /* Botões Interativos */
     .action-buttons {
       display: flex;
       flex-direction: column;
@@ -241,17 +234,11 @@
       text-decoration: none;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      position: relative;
-      overflow: hidden;
     }
 
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .btn:active {
-      transform: translateY(-1px);
     }
 
     .btn-rsvp {
@@ -283,7 +270,112 @@
       background-color: var(--primary-hover);
     }
 
-    /* Toast de Notificação Animado */
+    /* ==========================================
+       MODAL DE CONFIRMAÇÃO DE PRESENÇA (RSVP)
+       ========================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 20px;
+      max-width: 450px;
+      width: 100%;
+      text-align: left;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    /* Toast Notification */
     .toast {
       visibility: hidden;
       min-width: 250px;
@@ -309,78 +401,48 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Keyframes / Animações CSS */
+    /* Keyframes */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulseGreen {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-      }
-      70% {
-        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     @keyframes zoomBackground {
-      0% {
-        background-size: 100%;
-      }
-      100% {
-        background-size: 108%;
-      }
+      0% { background-size: 100%; }
+      100% { background-size: 108%; }
     }
 
     @media (min-width: 600px) {
-      .hero-title {
-        font-size: 4.5rem;
-      }
-      .main-card {
-        padding: 50px 40px;
-      }
+      .hero-title { font-size: 4.5rem; }
+      .main-card { padding: 50px 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra de Aviso -->
   <div class="demo-bar">
     ✨ Modelo Demonstrativo — Convite Digital
   </div>
 
-  <!-- Capa Principal -->
   <header class="hero">
     <p class="hero-subtitle">Convidam para o seu casamento</p>
     <h1 class="hero-title">Mariana & Lucas</h1>
     <p class="hero-date">15 . 11 . 2026</p>
   </header>
 
-  <!-- Conteúdo em Cartão -->
   <main class="main-card">
     
-    <!-- Contagem Regressiva -->
     <section class="countdown-container reveal">
       <p class="countdown-title">Contagem Regressiva</p>
       <div class="timer">
@@ -405,7 +467,6 @@
 
     <div class="divider reveal">❦</div>
 
-    <!-- Informações da Cerimônia -->
     <section class="info-block reveal">
       <h2 class="section-title">Cerimônia & Recepção</h2>
       <p><strong>Horário:</strong> 17:00 horas</p>
@@ -415,13 +476,12 @@
 
     <div class="divider reveal">❦</div>
 
-    <!-- Ações Interativas -->
     <section class="action-buttons reveal">
       
-      <!-- RSVP WhatsApp -->
-      <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20no%20casamento%20de%20Mariana%20e%20Lucas." target="_blank" class="btn btn-rsvp">
-        <span>💬</span> Confirmar Presença (RSVP)
-      </a>
+      <!-- Botão para Abrir o Modal de RSVP -->
+      <button onclick="openModal()" class="btn btn-rsvp">
+        <span>💬</span> Confirmar Presença (RSVP Complete)
+      </button>
 
       <!-- Google Maps -->
       <a href="https://maps.google.com" target="_blank" class="btn btn-maps">
@@ -437,10 +497,70 @@
 
   </main>
 
-  <!-- Notification Toast -->
+  <!-- MODAL DE RSVP -->
+  <div id="rsvpModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Confirmar Presença</h3>
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+      </div>
+
+      <form id="rsvpForm" onsubmit="enviaWhatsApp(event)">
+        
+        <div class="form-group">
+          <label>Seu Nome Completo *</label>
+          <input type="text" id="nome" placeholder="Ex: João da Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label>Você irá ao evento? *</label>
+          <select id="status" required>
+            <option value="Sim, com certeza!">Sim, com certeza irei!</option>
+            <option value="Infelizmente não poderei ir">Infelizmente não poderei ir</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Acompanhantes Adultos</label>
+            <select id="adultos">
+              <option value="0">Apenas eu</option>
+              <option value="1">+1 Acompanhante</option>
+              <option value="2">+2 Acompanhantes</option>
+              <option value="3">+3 Acompanhantes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Crianças</label>
+            <select id="criancas">
+              <option value="0">Nenhuma</option>
+              <option value="1">1 Criança</option>
+              <option value="2">2 Crianças</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Restrição Alimentar ou Alergia?</label>
+          <input type="text" id="restricao" placeholder="Ex: Vegetariano, intolerância a lactose...">
+        </div>
+
+        <div class="form-group">
+          <label>Deixe uma mensagem para os noivos</label>
+          <textarea id="mensagem" rows="3" placeholder="Escreva uma mensagem carinhosa..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-rsvp" style="margin-top: 10px;">
+          Enviar Confirmação
+        </button>
+
+      </form>
+    </div>
+  </div>
+
   <div id="toast" class="toast">✨ Chave PIX copiada com sucesso!</div>
 
-  <!-- Scripts Interativos -->
   <script>
     // 1. Contagem Regressiva
     const targetDate = new Date("November 15, 2026 17:00:00").getTime();
@@ -464,32 +584,60 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 2. Animação Scroll Reveal ao Rolar a Tela
+    // 2. Revelação ao rolar
     function reveal() {
       const reveals = document.querySelectorAll(".reveal");
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 80;
-
-        if (elementTop < windowHeight - elementVisible) {
+        if (elementTop < windowHeight - 80) {
           reveals[i].classList.add("active");
         }
       }
     }
     window.addEventListener("scroll", reveal);
-    reveal(); // Executa na inicialização
+    reveal();
 
-    // 3. Copiar PIX
+    // 3. Funções do Modal de RSVP
+    function openModal() {
+      document.getElementById("rsvpModal").classList.add("active");
+    }
+
+    function closeModal() {
+      document.getElementById("rsvpModal").classList.remove("active");
+    }
+
+    // Enviar dados preenchidos formatados diretamente no WhatsApp
+    function enviaWhatsApp(event) {
+      event.preventDefault();
+      
+      const nome = document.getElementById("nome").value;
+      const status = document.getElementById("status").value;
+      const adultos = document.getElementById("adultos").value;
+      const criancas = document.getElementById("criancas").value;
+      const restricao = document.getElementById("restricao").value || "Nenhuma";
+      const mensagem = document.getElementById("mensagem").value || "Sem mensagem";
+
+      const texto = `*CONFIRMAÇÃO DE PRESENÇA*%0A%0A` +
+                    `👤 *Nome:* ${nome}%0A` +
+                    `❓ *Status:* ${status}%0A` +
+                    `👥 *Acompanhantes Adultos:* ${adultos}%0A` +
+                    `👶 *Crianças:* ${criancas}%0A` +
+                    `🥗 *Restrição Alimentar:* ${restricao}%0A` +
+                    `💬 *Mensagem:* ${mensagem}`;
+
+      window.open(`https://api.whatsapp.com/send?phone=5527992497940&text=${texto}`, '_blank');
+      closeModal();
+    }
+
+    // 4. Copiar PIX
     function copiarPix() {
       const chavePixExemplo = "000.000.000-00";
       navigator.clipboard.writeText(chavePixExemplo);
 
       const toast = document.getElementById("toast");
       toast.classList.add("show");
-      setTimeout(() => { 
-        toast.classList.remove("show"); 
-      }, 3000);
+      setTimeout(() => { toast.classList.remove("show"); }, 3000);
     }
   </script>
 
