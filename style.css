@@ -955,3 +955,41 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
+.video-preview {
+  width: 100%;
+  height: auto;
+  border-radius: 25px; /* Ajuste para coincidir com a borda do celular */
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Moldura do celular */
+.mockup-celular
+
+/* Vídeo dentro do celular */
+.mockup-celular video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz o vídeo preencher a tela inteira sem distorcer */
+  display: block;
+}
+/* Container pai do mockup */
+.mockup-celular {
+  position: relative;
+  width: 220px;            /* Ajuste a largura ideal para seu card */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;        /* Esconde qualquer sobra que saia da borda */
+  border-radius: 32px;     /* Acompanha a curva do celular */
+}
+
+/* Imagem ou vídeo dentro do celular */
+.mockup-celular img,
+.mockup-celular video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Ajusta o conteúdo proporcionalmente */
+  display: block;
+}
