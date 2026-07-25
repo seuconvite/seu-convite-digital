@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstrativo - Mariana & Lucas</title>
+  
+  <!-- Fontes Elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #8c7355;
+      --primary-hover: #735e45;
+      --bg-color: #faf8f5;
+      --card-bg: #ffffff;
+      --text-main: #2c2c2c;
+      --text-muted: #666666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+    }
+
+    /* Barra Superior Flutuante com Entrada Suave */
+    .demo-bar {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 8px 15px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    /* Hero Banner com Zoom e Fade In */
+    .hero {
+      position: relative;
+      height: 75vh;
+      min-height: 480px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 20px;
+      animation: zoomBackground 15s infinite alternate ease-in-out;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.2s backwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 15px;
+      animation: fadeInUp 1s ease-out 0.4s backwards;
+    }
+
+    .hero-date {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      font-weight: 300;
+      border-top: 1px solid rgba(255,255,255,0.4);
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 20px;
+      margin-top: 10px;
+      animation: fadeInUp 1s ease-out 0.6s backwards;
+    }
+
+    /* Card Principal com Animação de Subida */
+    .main-card {
+      max-width: 650px;
+      margin: -50px auto 0 auto;
+      background: var(--card-bg);
+      padding: 40px 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      position: relative;
+      z-index: 10;
+      width: 90%;
+      animation: fadeInUp 1s ease-out 0.8s backwards;
+    }
+
+    /* Contagem Regressiva */
+    .countdown-container {
+      margin: 20px 0 35px 0;
+    }
+
+    .countdown-title {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .timer-box {
+      background: #fdfbf7;
+      border: 1px solid #ede8de;
+      padding: 12px 15px;
+      border-radius: 12px;
+      min-width: 65px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timer-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(140, 115, 85, 0.15);
+    }
+
+    .timer-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: block;
+    }
+
+    .timer-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* Divisor com Rotação em Hover */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+      color: var(--primary);
+      transition: transform 0.6s ease;
+    }
+
+    .divider:hover {
+      transform: rotate(180deg);
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #e2dad0;
+      margin: 0 15px;
+    }
+
+    /* Detalhes do Evento */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .info-block {
+      margin-bottom: 25px;
+    }
+
+    .info-block h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .info-block p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Elementos para Revelação ao Rolar a Tela */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Botões Interativos com Animações Vibrantes */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-rsvp {
+      background-color: #25d366;
+      color: white;
+      animation: pulseGreen 2s infinite;
+    }
+
+    .btn-rsvp:hover {
+      background-color: #20ba5a;
+    }
+
+    .btn-maps {
+      background-color: #ffffff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-maps:hover {
+      background-color: #fdfbf7;
+    }
+
+    .btn-pix {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-pix:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Toast de Notificação Animado */
+    .toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #1e293b;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      padding: 14px 20px;
+      position: fixed;
+      z-index: 1000;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Keyframes / Animações CSS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGreen {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @keyframes zoomBackground {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 108%;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .hero-title {
+        font-size: 4.5rem;
+      }
+      .main-card {
+        padding: 50px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Aviso -->
+  <div class="demo-bar">
+    ✨ Modelo Demonstrativo — Convite Digital
+  </div>
+
+  <!-- Capa Principal -->
+  <header class="hero">
+    <p class="hero-subtitle">Convidam para o seu casamento</p>
+    <h1 class="hero-title">Mariana & Lucas</h1>
+    <p class="hero-date">15 . 11 . 2026</p>
+  </header>
+
+  <!-- Conteúdo em Cartão -->
+  <main class="main-card">
+    
+    <!-- Contagem Regressiva -->
+    <section class="countdown-container reveal">
+      <p class="countdown-title">Contagem Regressiva</p>
+      <div class="timer">
+        <div class="timer-box">
+          <span class="timer-number" id="days">00</span>
+          <span class="timer-label">Dias</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-number" id="hours">00</span>
+          <span class="timer-label">Horas</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-number" id="minutes">00</span>
+          <span class="timer-label">Min</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-number" id="seconds">00</span>
+          <span class="timer-label">Seg</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider reveal">❦</div>
+
+    <!-- Informações da Cerimônia -->
+    <section class="info-block reveal">
+      <h2 class="section-title">Cerimônia & Recepção</h2>
+      <p><strong>Horário:</strong> 17:00 horas</p>
+      <p><strong>Local:</strong> Espaço Bosque das Flores</p>
+      <p>Av. Principal, 1000 — Bairro Nobre, São Paulo - SP</p>
+    </section>
+
+    <div class="divider reveal">❦</div>
+
+    <!-- Ações Interativas -->
+    <section class="action-buttons reveal">
+      
+      <!-- RSVP WhatsApp -->
+      <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20no%20casamento%20de%20Mariana%20e%20Lucas." target="_blank" class="btn btn-rsvp">
+        <span>💬</span> Confirmar Presença (RSVP)
+      </a>
+
+      <!-- Google Maps -->
+      <a href="https://maps.google.com" target="_blank" class="btn btn-maps">
+        <span>📍</span> Como Chegar (Google Maps / Waze)
+      </a>
+
+      <!-- Copiar PIX -->
+      <button onclick="copiarPix()" class="btn btn-pix">
+        <span>🎁</span> Lista de Presentes (Chave PIX)
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast">✨ Chave PIX copiada com sucesso!</div>
+
+  <!-- Scripts Interativos -->
+  <script>
+    // 1. Contagem Regressiva
+    const targetDate = new Date("November 15, 2026 17:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 2. Animação Scroll Reveal ao Rolar a Tela
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 80;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // Executa na inicialização
+
+    // 3. Copiar PIX
+    function copiarPix() {
+      const chavePixExemplo = "000.000.000-00";
+      navigator.clipboard.writeText(chavePixExemplo);
+
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => { 
+        toast.classList.remove("show"); 
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
